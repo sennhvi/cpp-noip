@@ -1,0 +1,11 @@
+.git
+*.swp
+*.exe
+*.layout
+*.o
+*.win
+*.txt
+*.dev
+cmake-build-debug/
+!*.cpp
+!*.h
