@@ -6,6 +6,7 @@
 *.win
 *.txt
 *.dev
+.idea
 cmake-build-debug/
 !*.cpp
 !*.h
