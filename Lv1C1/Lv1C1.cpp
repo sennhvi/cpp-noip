@@ -1,44 +1,55 @@
 /*
     Implement functions in this file
 */
-#include <iostream> 
+#include <iostream>
 #include <iomanip>
+
 using namespace std;
 
 int Lv1C1Q1() {
-//	Ò»¸öÊýµÄµ®Éú 
-	int a, b, c;
-	cin >> a >> b;
-	c = a + b;
-	cout << c << endl;	
+    // åŠ æ³•
+    int a, b, c;
+    cin >> a >> b;
+    c = a + b;
+    cout << c << endl;
 }
 
 int Lv1C1Q2() {
-//	Èý¸öÊýµÄÆ½¾ùÊý£¬iomanip
-	double a, b, c, d;
-	cin >> a >> b >> c;
-	d = (a + b + c) / 3;
-	cout << fixed << setprecision(3) << d << endl;
+    // è®¾ç½®ç²¾åº¦ï¼Œiomanip
+    double a, b, c, d;
+    cin >> a >> b >> c;
+    d = (a + b + c) / 3;
+    cout << fixed << setprecision(3) << d << endl;
 }
 
 int Lv1C1Q3() {
-//	³É¼¨µÈ¼¶×ª»»
-	char grade;
-	double score;
-	cin >> grade >> score;
-	grade -= 32;
-	cout << grade << ' ' << fixed << setprecision(2) << score << endl;
+    // æ˜¾ç¤ºåˆ†æ•°å¯¹åº”ç­‰çº§
+    char grade;
+    double score;
+    cin >> grade >> score;
+    grade -= 32;
+    cout << grade << ' ' << fixed << setprecision(2) << score << endl;
 }
 
 int Lv1C1Q4() {
-//	·ÖÌÇ¹û£¬Ã¿¸öÈËÌÇ¹û·Ö3·Ý£¬¶àÓà³Ôµô£¬Á©·Ý·Ö±ð¸øÁÚ½ü 
+    // äº¤æ¢ç³–æžœï¼Œæ¯ä¸ªäººç³–æžœ3ç­‰ä»½åˆ†é‚»å±…
     int a, b, c, d, e;
     cin >> a >> b >> c >> d >> e;
-    a = a / 3; b = b + a; e = e + a;
-    b = b / 3; c = c + b; a = a + b;
-    c = c / 3; b = b + c; d = d + c;
-    d = d / 3; e = e + d; c = c + d;
-    e = e / 3; d = d + e; a = a + e;
-    cout << a <<" " << b << " " << c << " " << d << " " << e;
-    return 0;	
+    a = a / 3;
+    b = b + a;
+    e = e + a;
+    b = b / 3;
+    c = c + b;
+    a = a + b;
+    c = c / 3;
+    b = b + c;
+    d = d + c;
+    d = d / 3;
+    e = e + d;
+    c = c + d;
+    e = e / 3;
+    d = d + e;
+    a = a + e;
+    cout << a << " " << b << " " << c << " " << d << " " << e;
+    return 0;
 }
