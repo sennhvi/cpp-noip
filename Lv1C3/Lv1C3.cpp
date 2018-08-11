@@ -7,7 +7,17 @@
 using namespace std;
 
 int Lv1C3Q1() {
-//
+    // 输入指定个数字并求和
+    int a;
+    cin >> a;
+    // cin >> b >> c >> d;
+    int b;
+    int sum = 0;
+    for (int i = 0; i < a; i++) {
+        cin >> b;
+        sum += b;
+    }
+    cout << sum;
     return 0;
 }
 
