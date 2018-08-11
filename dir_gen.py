@@ -47,6 +47,7 @@ with open(cpp_fn, "w+") as cpp:
     Implement functions in this file\n*/
 #include <iostream> 
 #include <iomanip>
+
 using namespace std;
 
 %s
