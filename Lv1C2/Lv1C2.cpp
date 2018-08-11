@@ -54,11 +54,27 @@ int Lv1C2Q3() {
 }
 
 int Lv1C2Q4() {
-//	
+    // 四则运算器
+    double a, c;
+    char b;
+    cin >> a >> b >> c;
+    switch (b) {
+        case '+':
+            cout << fixed << setprecision(6) << a + c << endl;
+            break;
+        case '-':
+            cout << fixed << setprecision(6) << a - c << endl;
+            break;
+        case '*':
+            cout << fixed << setprecision(6) << a * c << endl;
+            break;
+        case '/':
+            cout << fixed << setprecision(6) << a / c << endl;
+            break;
+    }
     return 0;
 }
 
 int Lv1C2Q5() {
-//	
     return 0;
 }
