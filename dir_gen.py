@@ -24,7 +24,7 @@ q_main_str = q_header_str = q_cpp_str = ""
 for i in range(1, int(q_num)+1):
     q_main_str = "{}    {}Q{}();\n".format(q_main_str, dir_path, i)
     q_header_str = "{}int {}Q{}();\n\n".format(q_header_str, dir_path, i)
-    q_cpp_str = q_cpp_str + "int %sQ%s() {\n//\n    return 0;\n}\n\n" %(dir_path, i)
+    q_cpp_str = q_cpp_str + "int %sQ%s() {\n\t//\n    return 0;\n}\n\n" %(dir_path, i)
 
 print(q_main_str, q_header_str, q_cpp_str)
 
