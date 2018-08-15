@@ -3,6 +3,7 @@
 */
 #include <iostream>
 #include <iomanip>
+#include <cstring>
 
 using namespace std;
 
@@ -60,6 +61,21 @@ int Lv1C4Q2() {
 
 int Lv1C4Q3() {
     //
+    char a[105], b[105];
+    scanf("%s %s", a, b);
+
+    int len_a = strlen(a), len_b = strlen(b);
+    if (len_a != len_b) puts("No");
+    else {
+        bool is_same = true;
+        for (int i = 0; i < len_a; i++) {
+            if (a[i] != b[i] && a[i] - b[i] != 32 && b[i] - a[i] != 32) {
+                is_same = false;
+                break;
+            }
+        }
+        puts(is_same ? "Yes" : "No");
+    }
     return 0;
 }
 
