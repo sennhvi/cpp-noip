@@ -80,7 +80,34 @@ int Lv1C4Q3() {
 }
 
 int Lv1C4Q4() {
-    //
+    /*
+     * 给定一个4*4的矩阵（数学上，一个r×c的矩阵是一个由r行c列元素排列成的矩形阵列），将第n行和第m行交换，输出交
+     * 换后的结果。1<=m,n<5
+     */
+    int a[4][4];
+    int m, n;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            cin >> a[i][j];
+        }
+    }
+    cin >> m >> n;
+    n--;
+    m--;
+    cout << m << n;
+    cout << '\n';
+    for (int i = 0; i < 4; i++) {
+        int temp = a[m][i];
+        a[m][i] = a[n][i];
+        a[n][i] = temp;
+    }
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            cout << a[i][j];
+            cout << ' ';
+        }
+        cout << '\n';
+    }
     return 0;
 }
 
