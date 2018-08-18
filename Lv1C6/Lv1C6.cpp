@@ -4,6 +4,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdio>
+#include <cmath>
 
 using namespace std;
 
@@ -16,6 +17,25 @@ struct student stu[101];
 //    char name[11];
 //    int grade;
 //} stu[101];
+
+struct Point {
+    double x, y;
+};
+
+double length(Point m, Point n) {
+    double p = m.x - n.x;
+    double q = m.y - n.y;
+    return sqrt(p * p + q * q);
+}
+
+
+struct Triangle {
+    Point a, b, c;
+    // 结构体的成员函数，提供一些供结构体变量调用的功能
+    double calc() {
+        return length(a, b) + length(b, c) + length(a, c);
+    }
+};
 
 int Lv1C6Q1() {
     /*
@@ -39,7 +59,16 @@ int Lv1C6Q1() {
 }
 
 int Lv1C6Q2() {
-    //
+    /*
+     * 给出三角形三个顶点的坐标（x,y），求该三角形的周长。
+     * 对所有数据，满足-100<=x,y<=100。
+     */
+    Triangle t;
+    cin >> t.a.x >> t.a.y >> t.b.x >> t.b.y >> t.c.x >> t.c.y;
+    cout << fixed << setprecision(2) << t.calc();
+
+
+
     return 0;
 }
 
