@@ -66,6 +66,14 @@ Ans solve(int x) {
 }
 
 
+// Lv1C6Q4
+void exchange(int &a, int &b) {
+    int t = a;
+    a = b;
+    b = t;
+}
+
+
 int Lv1C6Q1() {
     /*
      * 找出第一名，数据满足0< n <=100，且学生成绩为0到100之间的整数，即0 <= ai <=100.
@@ -111,8 +119,34 @@ int Lv1C6Q3() {
 }
 
 int Lv1C6Q4() {
-    //
+    /*
+     * void exchange(int &a, int &b) {int t = a; a = b; b = t;} // 使用引用来交换值
+     * void exchange(int a[], int m, int n) {int t = a[m]; a[m] = a[n]; a[n] = t;} // 使用数组指针来交换值
+     * 在C++中，当函数参数为数组时，对数组的操作，也可以作用于函数外部的数组的
+     */
+    /*
+     * 5名身高不等的同学从左到右站成一排，要求把身高最高的同学和最左边的同学互换位置
+     * 完成互换后，再把身高最矮的同学和最右边的同学互换位置。
+     * 数据满足输入的所有整数均为不超过300的正整数。
+     */
+    int a[5];
+    for (int i = 0; i< 5; i++) {
+        cin >> a[i];
+    }
+    int max_num = 0;
+    for (int i = 1; i < 5; ++i) {
+        if (a[i] > a[max_num])
+            max_num = i;
+    }
+    exchange(a[0], a[max_num]);
+    int min_num = 1;
+    for (int i = 2; i < 5; ++i) {
+        if (a[i] < a[min_num])
+            min_num = i;
+    }
+    exchange(a[4], a[min_num]);
+    for (int i = 0; i < 5; ++i) {
+        cout << a[i] << ' ';
+    }
     return 0;
 }
-
-
