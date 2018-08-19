@@ -8,6 +8,7 @@
 
 using namespace std;
 
+// Lv1Q1
 struct student {
     char name[11];
     int grade;
@@ -18,6 +19,8 @@ struct student stu[101];
 //    int grade;
 //} stu[101];
 
+
+// Lv1Q2
 struct Point {
     double x, y;
 };
@@ -28,14 +31,40 @@ double length(Point m, Point n) {
     return sqrt(p * p + q * q);
 }
 
-
 struct Triangle {
     Point a, b, c;
+
     // 结构体的成员函数，提供一些供结构体变量调用的功能
     double calc() {
         return length(a, b) + length(b, c) + length(a, c);
     }
 };
+
+// Lv1Q3
+int p[8] = {2, 3, 5, 7, 11, 13, 17, 19};
+struct Ans {
+    int a, b;
+};
+
+Ans solve(int x) {
+    Ans ans;
+    for (int i = 0; i < 8; i++) {
+        if (x % p[i] == 0) {
+            ans.a = p[i];
+            int y = 1;
+            for (int j = 1; j <= 5; j++) {
+                y *= p[i];
+                if (x == y) {
+                    ans.b = j;
+                    break;
+                }
+            }
+            break;
+        }
+    }
+    return ans;
+}
+
 
 int Lv1C6Q1() {
     /*
@@ -66,14 +95,18 @@ int Lv1C6Q2() {
     Triangle t;
     cin >> t.a.x >> t.a.y >> t.b.x >> t.b.y >> t.c.x >> t.c.y;
     cout << fixed << setprecision(2) << t.calc();
-
-
-
     return 0;
 }
 
 int Lv1C6Q3() {
-    //
+    /*
+     * 输入a的b次幂的结果，求解a和b的值，其中a是20以内的质数，b是1到5之间的整数（包含1和5）。
+     * 数据满足0<x<=10，000，000，且输入数据保证x可以表示成a的b次幂的形式
+     */
+    int x;
+    cin >> x;
+    Ans ans = solve(x);
+    cout << ans.a << ' ' << ans.b << endl;
     return 0;
 }
 
