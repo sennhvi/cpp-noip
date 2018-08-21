@@ -8,11 +8,20 @@
 
 using namespace std;
 
-int transfer(int a[], char s[]) {
+int transfer_plus(int a[], char s[]) {
     int len = strlen(s);
     for (int i = 0; i < len; i++) {
         a[len - i - 1] = s[i] - '0';
     }
+}
+
+int transfer_minus(int a[], char s[]) {
+    int i, len;
+    len = strlen(s);
+    for (i = 0; i < len; i++) {
+        a[len - i - 1] = s[i] - '0';
+    }
+    return len;
 }
 
 
@@ -47,8 +56,8 @@ int Lv1C7Q2() {
     memset(a1, 0, sizeof(a1));
     memset(a2, 0, sizeof(a2));
     scanf("%s\n%s", s1, s2);
-    len1 = transfer(a1, s1);
-    len2 = transfer(a2, s2);
+    len1 = transfer_plus(a1, s1);
+    len2 = transfer_plus(a2, s2);
     while (s <= len1 || s <= len2) {
         ans[s] = a1[s] + a2[s] + c;
         c = ans[s] / 10;
@@ -62,8 +71,29 @@ int Lv1C7Q2() {
 }
 
 int Lv1C7Q3() {
-    //
+    // 在两行中分别输入一个 L1 位和 L2 位正整数 A1 和 A2，保证 A1> A2 且满足0 < L1 , L2 <100
+    // 一个数字占一行，要求计算A1-A2的差S，并在一行中输出，数字前部无多余的0。
+    char s1[100], s2[100];
+    int a1[100], a2[100], ans[100];
+    int len1, len2, s = 0, c = 0, i;
+    memset(ans, 0, sizeof(ans));
+    memset(a1, 0, sizeof(a1));
+    memset(a2, 0, sizeof(a2));
+
+    scanf("%s\n%s", s1, s2);
+    len1 = transfer_minus(a1, s1);
+    len2 = transfer_minus(a2, s2);
+    while (s <= len1) {
+        a1[s] -= c;
+        if (a1[s] < a2[s]) {
+            c = 1;
+            a1[s] += 10;
+        } else c = 0;
+        ans[s] = a1[s] - a2[s];
+        s++;
+    }
+    while (ans[s - 1] == 0) s--;
+    for (i = s - 1; i >= 0; i--) printf("%d", ans[i]);
     return 0;
 }
-
 
